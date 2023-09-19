@@ -67,5 +67,27 @@ export default function QueryProcessor(query: string): string {
     return (x-y).toString();
   }
 
+  function isPrime(num: number){
+    if(num < 2) return false;
+
+  }
+
+  // const prime = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  // if (prime) {
+  //   const x: number = parseInt(prime[1]);
+  //   const y: number = parseInt(prime[2]);
+  //   const z: number = parseInt(prime[3]);
+  //   const a: number = parseInt(prime[4]);
+  //   const b: number = parseInt(prime[5]);
+  //   return (x-y).toString();
+  // }
+
+  const pow = query.match(/What is (\d+) to the power of (\d+)?/);
+  if (pow) {
+    const x: number = parseInt(pow[1]);
+    const y: number = parseInt(pow[2]);
+    return Math.pow(x, y).toString();
+  }
+
   return "";
 }

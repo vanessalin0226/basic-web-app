@@ -53,4 +53,14 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("What is 2 minus 1?")).toEqual("1");
         expect(QueryProcessor("What is 4 minus 4?")).toEqual("0");
     });
+
+    // test('should return prime numbers', () => {
+    //     expect(QueryProcessor("Which of the following numbers are primes: 2, 5, 11, 10, 1?")).toEqual("2, 5, 11");
+    //     expect(QueryProcessor("Which of the following numbers are primes: 17, 19, 29, 0, 6?")).toEqual("17, 19, 29");
+    // });
+
+    test('should give powers of number', () => {
+        expect(QueryProcessor("What is 2 to the power of 2??")).toEqual("4");
+        expect(QueryProcessor("What is 8 to the power of 2?")).toEqual("64");
+    });
 });
