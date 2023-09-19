@@ -47,5 +47,25 @@ export default function QueryProcessor(query: string): string {
     return (x*y).toString();
   }
 
+  // const sqNCube = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  // if (sqNCube) {
+
+  //   const x: number = parseInt(sqNCube[1]);
+  //   const y: number = parseInt(sqNCube[2]);
+  //   const z: number = parseInt(sqNCube[3]);
+  //   const a: number = parseInt(sqNCube[4]);
+  //   const b: number = parseInt(sqNCube[5]);
+  //   const c: number = parseInt(sqNCube[6]);
+  //   const d: number = parseInt(sqNCube[7]);
+  //   return (x*y).toString();
+  // }
+
+  const minus = query.match(/What is (\d+) minus (\d+)/);
+  if (minus) {
+    const x: number = parseInt(minus[1]);
+    const y: number = parseInt(minus[2]);
+    return (x-y).toString();
+  }
+
   return "";
 }
