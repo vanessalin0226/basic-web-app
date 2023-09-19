@@ -25,6 +25,14 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  const getMax = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/);
+  if (getMax) {
+    const x: number = parseInt(getMax[1]);
+    const y: number = parseInt(getMax[2]);
+    const z: number = parseInt(getMax[3]);
+    return Math.max(x,y,z).toString();
+  }
+
   const addMatch = query.match(/What is (\d+) plus (\d+)/);
   if (addMatch) {
     const x: number = parseInt(addMatch[1]);
